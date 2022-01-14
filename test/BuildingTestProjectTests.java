@@ -55,4 +55,17 @@ public class BuildingTestProjectTests {
         Assert.assertEquals(house.residents[0], "Hans");
         Assert.assertEquals(house.residents.length, 1);
     }
+    @Test
+    public void _06_RemoveNotExistingResidentShallNotBesRemoved(){
+        Building.count = 0;
+        Building house = new Building("Hans");
+
+        house.addResident("Lukas");
+        Assert.assertEquals(house.residents[1], "Lukas");
+
+        house.removeResident("Hubert");
+
+        Assert.assertEquals(house.residents.length, 2);
+    }
+
 }

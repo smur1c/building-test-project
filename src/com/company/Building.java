@@ -52,8 +52,7 @@ public class Building {
                     temp[i] = residents[i];
                 }
             }
+            residents = temp;
         }
-
-        residents = temp;
     }
 }
