@@ -32,4 +32,17 @@ public class BuildingTestProjectTests {
         house.addResident("Hubert");
         Assert.assertEquals(house.residents[1], "Hubert");
     }
+
+    @Test
+    public void _04_CreateOneBuildingAddMultipleResidentsAndRemoveResidentShallBeRemoved(){
+        Building.count = 0;
+        Building house = new Building("Hans");
+
+        house.addResident("Hubert");
+        Assert.assertEquals(house.residents[1], "Hubert");
+
+        house.removeResident("Hubert");
+
+        Assert.assertEquals(house.residents.length, 1);
+    }
 }

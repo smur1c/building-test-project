@@ -21,7 +21,28 @@ public class Building {
             temp[i] = residents[i];
         }
         temp[residents.length] = name;
-        residents = new String[temp.length];
+        residents = temp;
+
+    }
+
+    public void removeResident(String name){
+        boolean hasBeenRemoved = false;
+        String temp[] = new String[residents.length - 1];
+        for(int i = 0; i < residents.length; i++){
+            if(residents[i] == name){
+                residents[i] = "";
+                hasBeenRemoved = true;
+            }
+        }
+
+        if(hasBeenRemoved){
+            for(int i = 0; i < temp.length; i++){
+                if(residents[i] != ""){
+                    temp[i] = residents[i];
+                }
+            }
+        }
+
         residents = temp;
     }
 }
