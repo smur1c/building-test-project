@@ -5,7 +5,6 @@ public class Building {
     public String initialResident;
     public String[] residents = new String[1];
     public int buildingID;
-    public int numberOfResidents;
 
     public Building(String initialResident){
         count++;
@@ -19,12 +18,17 @@ public class Building {
         }
         if(!contains(name)){
             String temp[] = new String[residents.length + 1];
-            for(int i = 0; i < residents.length; i++){
-                temp[i] = residents[i];
-            }
+            temp = storeArrayIntoNew(temp);
             temp[residents.length] = name;
             residents = temp;
         }
+    }
+
+    public String[] storeArrayIntoNew(String[] temp){
+        for(int i = 0; i < residents.length; i++){
+            temp[i] = residents[i];
+        }
+        return temp;
     }
 
     public boolean contains(String name){
