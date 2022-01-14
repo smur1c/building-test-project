@@ -24,4 +24,12 @@ public class BuildingTestProjectTests {
         Assert.assertEquals(house.initialResident, "Hans");
     }
 
+    @Test
+    public void _03_CreateOneBuildingAddMultipleResident(){
+        Building.count = 0;
+        Building house = new Building("Hans");
+
+        house.addResident("Hubert");
+        Assert.assertEquals(house.residents[1], "Hubert");
+    }
 }
