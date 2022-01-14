@@ -5,6 +5,7 @@ public class Building {
     public String initialResident;
     public String[] residents = new String[1];
     public int buildingID;
+    public int numberOfResidents;
 
     public Building(String initialResident){
         count++;
@@ -54,5 +55,9 @@ public class Building {
             }
             residents = temp;
         }
+    }
+
+    public int getNumberOfResidents() {
+        return residents.length;
     }
 }

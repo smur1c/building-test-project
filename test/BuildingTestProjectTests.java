@@ -68,4 +68,19 @@ public class BuildingTestProjectTests {
         Assert.assertEquals(house.residents.length, 2);
     }
 
+    @Test
+    public void _07_AddMultipleResidentsNumberOfResidentsShallBe5(){
+        Building.count = 0;
+        Building house = new Building("Hans");
+
+        house.addResident("Lukas");
+        house.addResident("Hubert");
+        house.addResident("Sebastian");
+        house.addResident("Stefan");
+        house.addResident("Dora");
+
+        house.removeResident("Hubert");
+
+        Assert.assertEquals(house.getNumberOfResidents(), 5);
+    }
 }
