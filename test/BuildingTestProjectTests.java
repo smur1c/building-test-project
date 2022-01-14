@@ -45,4 +45,14 @@ public class BuildingTestProjectTests {
 
         Assert.assertEquals(house.residents.length, 1);
     }
+
+    @Test
+    public void _05_CreateOneBuildingAddMultipleResidentsAddAlreadyExistingResidentWhichShallNotBeAdded(){
+        Building.count = 0;
+        Building house = new Building("Hans");
+
+        house.addResident("Hans");
+        Assert.assertEquals(house.residents[0], "Hans");
+        Assert.assertEquals(house.residents.length, 1);
+    }
 }

@@ -16,13 +16,24 @@ public class Building {
         if(residents.length == 1){
             residents[0] = initialResident;
         }
-        String temp[] = new String[residents.length + 1];
-        for(int i = 0; i < residents.length; i++){
-            temp[i] = residents[i];
+        if(!contains(name)){
+            String temp[] = new String[residents.length + 1];
+            for(int i = 0; i < residents.length; i++){
+                temp[i] = residents[i];
+            }
+            temp[residents.length] = name;
+            residents = temp;
         }
-        temp[residents.length] = name;
-        residents = temp;
+    }
 
+    public boolean contains(String name){
+        boolean contains = false;
+        for(int i = 0; i < residents.length; i++){
+            if(residents[i] == name){
+                contains = true;
+            }
+        }
+        return contains;
     }
 
     public void removeResident(String name){
