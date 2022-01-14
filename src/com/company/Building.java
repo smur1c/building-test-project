@@ -5,9 +5,10 @@ public class Building {
     public String initialResident;
     public int buildingID;
 
-    public Building(){
+    public Building(String initialResident){
         count++;
         buildingID = count;
+        this.initialResident = initialResident;
     }
 
     public void addResident(String name){
